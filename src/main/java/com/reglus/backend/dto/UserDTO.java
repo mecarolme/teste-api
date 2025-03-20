@@ -11,8 +11,6 @@ public class UserDTO {
     private String email;
     private String name;
     private LocalDate dateBirth;
-    private String gender;
-    private String disability;
     private String educationLevel;
     private String instituteName;
 
@@ -22,8 +20,6 @@ public class UserDTO {
         this.email = user.getEmail();
         this.name = user.getName();
         this.dateBirth = user.getDateBirth();
-        this.gender = user.getGender();
-        this.disability = user.getDisability();
         this.educationLevel = user.getEducationLevel();
         this.instituteName = user.getInstituteName();
     }
@@ -66,22 +62,6 @@ public class UserDTO {
 
     public void setDateBirth(LocalDate dateBirth) {
         this.dateBirth = dateBirth;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getDisability() {
-        return disability;
-    }
-
-    public void setDisability(String disability) {
-        this.disability = disability;
     }
 
     public String getEducationLevel() {
