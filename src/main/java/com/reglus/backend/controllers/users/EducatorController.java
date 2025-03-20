@@ -32,8 +32,6 @@ public class EducatorController {
             user.setPasswordHash(educatorRequest.getPasswordHash());
             user.setName(educatorRequest.getName());
             user.setDateBirth(educatorRequest.getDateBirth());
-            user.setGender(educatorRequest.getGender());
-            user.setDisability(educatorRequest.getDisability());
             user.setEducationLevel(educatorRequest.getEducationLevel());
             user.setInstituteName(educatorRequest.getInstituteName());
             userRepository.save(user);
@@ -94,8 +92,6 @@ public class EducatorController {
                 user.setPasswordHash(educatorRequest.getPasswordHash());
                 user.setName(educatorRequest.getName());
                 user.setDateBirth(educatorRequest.getDateBirth());
-                user.setGender(educatorRequest.getGender());
-                user.setDisability(educatorRequest.getDisability());
                 user.setEducationLevel(educatorRequest.getEducationLevel());
                 user.setInstituteName(educatorRequest.getInstituteName());
                 userRepository.save(user);

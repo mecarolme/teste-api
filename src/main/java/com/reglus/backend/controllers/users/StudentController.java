@@ -37,8 +37,6 @@ public class StudentController {
             user.setPasswordHash(studentRequest.getPasswordHash());
             user.setName(studentRequest.getName());
             user.setDateBirth(studentRequest.getDateBirth());
-            user.setGender(studentRequest.getGender());
-            user.setDisability(studentRequest.getDisability());
             user.setEducationLevel(studentRequest.getEducationLevel());
             user.setInstituteName(studentRequest.getInstituteName());
             userRepository.save(user);
@@ -47,44 +45,6 @@ public class StudentController {
             student.setUser(user);
             student.setState(studentRequest.getState());
             student.setCity(studentRequest.getCity());
-            student.setFinalObservations(studentRequest.getFinalObservations());
-
-            SocialAspect socialAspect = new SocialAspect();
-            socialAspect.setLivingWith(studentRequest.getSocialAspectRequest().getLivingWith());
-            socialAspect.setRelationshipWithClassmates(studentRequest.getSocialAspectRequest().getRelationshipWithClassmates());
-            socialAspect.setRelationshipWithTeachers(studentRequest.getSocialAspectRequest().getRelationshipWithTeachers());
-            socialAspect.setRelationshipWithFamily(studentRequest.getSocialAspectRequest().getRelationshipWithFamily());
-            socialAspect.setStudent(student);
-            student.setSocialAspect(socialAspect);
-
-            StudyHabit studyHabit = new StudyHabit();
-            studyHabit.setStudyMethods(studentRequest.getStudyHabitRequest().getStudyMethods());
-            studyHabit.setStudyHoursPerDay(studentRequest.getStudyHabitRequest().getStudyHoursPerDay());
-            studyHabit.setStudyLocations(studentRequest.getStudyHabitRequest().getStudyLocations());
-            studyHabit.setStudyPlan(studentRequest.getStudyHabitRequest().getStudyPlan());
-            studyHabit.setStudent(student);
-            student.setStudyHabit(studyHabit);
-
-            HealthWellbeing healthWellbeing = new HealthWellbeing();
-            healthWellbeing.setHealthCondition(studentRequest.getHealthWellbeingRequest().getHealthCondition());
-            healthWellbeing.setPhysicalActivity(studentRequest.getHealthWellbeingRequest().getPhysicalActivity());
-            healthWellbeing.setDietaryEvaluation(studentRequest.getHealthWellbeingRequest().getDietaryEvaluation());
-            healthWellbeing.setSleepHours(studentRequest.getHealthWellbeingRequest().getSleepHours());
-            healthWellbeing.setStudent(student);
-            student.setHealthWellbeing(healthWellbeing);
-
-            InterestHobby interestHobby = new InterestHobby();
-            interestHobby.setActivitiesOutsideSchool(studentRequest.getInterestHobbyRequest().getActivitiesOutsideSchool());
-            interestHobby.setDreamsGoals(studentRequest.getInterestHobbyRequest().getDreamsGoals());
-            interestHobby.setStudent(student);
-            student.setInterestHobby(interestHobby);
-
-            SelfAssessment selfAssessment = new SelfAssessment();
-            selfAssessment.setPerformanceEvaluation(studentRequest.getSelfAssessmentRequest().getPerformanceEvaluation());
-            selfAssessment.setStrengths(studentRequest.getSelfAssessmentRequest().getStrengths());
-            selfAssessment.setImprovementAreas(studentRequest.getSelfAssessmentRequest().getImprovementAreas());
-            selfAssessment.setStudent(student);
-            student.setSelfAssessment(selfAssessment);
 
             studentRepository.save(student);
 
@@ -126,14 +86,11 @@ public class StudentController {
                 user.setPasswordHash(studentRequest.getPasswordHash());
                 user.setName(studentRequest.getName());
                 user.setDateBirth(studentRequest.getDateBirth());
-                user.setGender(studentRequest.getGender());
-                user.setDisability(studentRequest.getDisability());
                 user.setEducationLevel(studentRequest.getEducationLevel());
                 user.setInstituteName(studentRequest.getInstituteName());
                 userRepository.save(user);
 
                 student.setUser(user);
-                student.setFinalObservations(studentRequest.getFinalObservations());
                 student.setState(studentRequest.getState());
                 student.setCity(studentRequest.getCity());
                 studentRepository.save(student);

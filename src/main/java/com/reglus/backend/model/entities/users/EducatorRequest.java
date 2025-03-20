@@ -10,8 +10,6 @@ public class EducatorRequest {
     private String passwordHash;
     private String name;
     private LocalDate dateBirth;
-    private String gender;
-    private String disability;
     private String educationLevel;
     private String instituteName;
     private String experienceYears;
@@ -55,22 +53,6 @@ public class EducatorRequest {
 
     public void setDateBirth(LocalDate dateBirth) {
         this.dateBirth = dateBirth;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getDisability() {
-        return disability;
-    }
-
-    public void setDisability(String disability) {
-        this.disability = disability;
     }
 
     public String getEducationLevel() {

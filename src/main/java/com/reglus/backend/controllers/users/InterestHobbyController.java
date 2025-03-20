@@ -66,29 +66,4 @@ public class InterestHobbyController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteInterestHobby(@PathVariable("id") Long id) {
-        try {
-            Optional<InterestHobby> interestHobbyData = interestHobbyRepository.findById(id);
-
-            if (interestHobbyData.isPresent()) {
-                InterestHobby interestHobby = interestHobbyData.get();
-                Student student = interestHobby.getStudent();
-
-                if (student != null) {
-                    student.setInterestHobby(null); // Assuming a setInterestHobby method exists
-                    studentRepository.save(student);
-                }
-
-                interestHobbyRepository.deleteById(id);
-
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }

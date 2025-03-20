@@ -82,11 +82,6 @@ public class StudyHabitController {
                 StudyHabit studyHabit = studyHabitData.get();
                 Student student = studyHabit.getStudent();
 
-                if (student != null) {
-                    student.setStudyHabit(null); // Assuming a setStudyHabit method exists
-                    studentRepository.save(student);
-                }
-
                 studyHabitRepository.deleteById(id);
 
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

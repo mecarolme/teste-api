@@ -73,29 +73,4 @@ public class HealthWellbeingController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteHealthWellbeing(@PathVariable("id") Long id) {
-        try {
-            Optional<HealthWellbeing> healthWellbeingData = healthWellbeingRepository.findById(id);
-
-            if (healthWellbeingData.isPresent()) {
-                HealthWellbeing healthWellbeing = healthWellbeingData.get();
-                Student student = healthWellbeing.getStudent();
-
-                if(student != null){
-                    student.setHealthWellbeing(null);
-                    studentRepository.save(student);
-                }
-                healthWellbeingRepository.deleteById(id);
-
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }

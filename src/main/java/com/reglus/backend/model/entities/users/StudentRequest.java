@@ -9,21 +9,10 @@ public class StudentRequest {
     private String passwordHash;
     private String name;
     private LocalDate dateBirth;
-    private String gender;
-    private String disability;
     private String educationLevel;
     private String instituteName;
     private String state;
     private String city;
-    private String finalObservations;
-
-    private byte[] profileImage;
-
-    private SocialAspectRequest socialAspectRequest;
-    private StudyHabitRequest studyHabitRequest;
-    private HealthWellbeingRequest healthWellbeingRequest;
-    private InterestHobbyRequest interestHobbyRequest;
-    private SelfAssessmentRequest selfAssessmentRequest;
 
     public String getEmail() {
         return email;
@@ -57,22 +46,6 @@ public class StudentRequest {
         this.dateBirth = dateBirth;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getDisability() {
-        return disability;
-    }
-
-    public void setDisability(String disability) {
-        this.disability = disability;
-    }
-
     public String getEducationLevel() {
         return educationLevel;
     }
@@ -103,61 +76,5 @@ public class StudentRequest {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getFinalObservations() {
-        return finalObservations;
-    }
-
-    public void setFinalObservations(String finalObservations) {
-        this.finalObservations = finalObservations;
-    }
-
-    public byte[] getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(byte[] profileImage) {
-        this.profileImage = profileImage;
-    }
-
-    public SocialAspectRequest getSocialAspectRequest() {
-        return socialAspectRequest;
-    }
-
-    public void setSocialAspectRequest(SocialAspectRequest socialAspectRequest) {
-        this.socialAspectRequest = socialAspectRequest;
-    }
-
-    public StudyHabitRequest getStudyHabitRequest() {
-        return studyHabitRequest;
-    }
-
-    public void setStudyHabitRequest(StudyHabitRequest studyHabitRequest) {
-        this.studyHabitRequest = studyHabitRequest;
-    }
-
-    public HealthWellbeingRequest getHealthWellbeingRequest() {
-        return healthWellbeingRequest;
-    }
-
-    public void setHealthWellbeingRequest(HealthWellbeingRequest healthWellbeingRequest) {
-        this.healthWellbeingRequest = healthWellbeingRequest;
-    }
-
-    public InterestHobbyRequest getInterestHobbyRequest() {
-        return interestHobbyRequest;
-    }
-
-    public void setInterestHobbyRequest(InterestHobbyRequest interestHobbyRequest) {
-        this.interestHobbyRequest = interestHobbyRequest;
-    }
-
-    public SelfAssessmentRequest getSelfAssessmentRequest() {
-        return selfAssessmentRequest;
-    }
-
-    public void setSelfAssessmentRequest(SelfAssessmentRequest selfAssessmentRequest) {
-        this.selfAssessmentRequest = selfAssessmentRequest;
     }
 }

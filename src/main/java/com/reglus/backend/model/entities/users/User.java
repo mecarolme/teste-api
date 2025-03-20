@@ -27,12 +27,6 @@ public class User {
 
     private LocalDate dateBirth;
 
-    @Column(length = 50)
-    private String gender;
-
-    @Column(nullable = false, length = 100)
-    private String disability;
-
     @Column(nullable = false, length = 50)
     private String educationLevel;
 
@@ -46,10 +40,6 @@ public class User {
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updatedAt = LocalDateTime.now();
-
-    @Lob
-    @Column(columnDefinition = "LONGBLOB")
-    private byte[] profileImage;
 
     // Getters and Setters
     public Long getUserId() {
@@ -100,22 +90,6 @@ public class User {
         this.dateBirth = dateBirth;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getDisability() {
-        return disability;
-    }
-
-    public void setDisability(String disability) {
-        this.disability = disability;
-    }
-
     public String getEducationLevel() {
         return educationLevel;
     }
@@ -146,13 +120,5 @@ public class User {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public byte[] getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(byte[] profileImage) {
-        this.profileImage = profileImage;
     }
 }

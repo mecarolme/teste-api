@@ -69,28 +69,4 @@ public class SelfAssessmentController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteSelfAssessment(@PathVariable("id") Long id) {
-        try {
-            Optional<SelfAssessment> selfAssessmentData = selfAssessmentRepository.findById(id);
-
-            if (selfAssessmentData.isPresent()) {
-                SelfAssessment selfAssessment = selfAssessmentData.get();
-                Student student = selfAssessment.getStudent();
-
-                if (student != null) {
-                    student.setSelfAssessment(null); // Assuming a setSelfAssessment method exists
-                    studentRepository.save(student);
-                }
-
-                selfAssessmentRepository.deleteById(id);
-
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }
